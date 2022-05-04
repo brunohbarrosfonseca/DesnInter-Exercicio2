@@ -13,3 +13,21 @@
 .resposta4{
     display: none;
 }
+
+body{
+    background-color: black;
+    color: white;
+    font-family: 'Radio Canada', sans-serif
+    
+}
+
+h1{
+    text-align: center;
+}
+
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;
+}
