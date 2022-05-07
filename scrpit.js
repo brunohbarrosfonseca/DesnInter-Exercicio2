@@ -1,36 +1,41 @@
 let quiz = document.querySelector('.quiz')
-let resposta1 = document.querySelector('.resposta1')
-let resposta2 = document.querySelector('.resposta2')
-let resposta3 = document.querySelector('.resposta3')
-let resposta4 = document.querySelector('.resposta4')
+let boxmensagem = document.querySelector('.boxmensagem')
+let resultado = document.querySelector('.resultado')
+let fantasma = document.querySelector('.fantasma')
+let body = document.querySelector('body')
 
-function checkAnswer(event){
+
+function checkAnswer(event) {
     quiz.classList.add('inactive')
-    let opcao = event.target
-    opcao.classList.add('clicked')
+    let alternative = event.target
+    alternative.classList.add('clicked')
 
-    if (opcao.classList.contains ('escolha1')){
-        resposta1.style.display = 'initial'
-    }
-    
-    if (opcao.classList.contains ('escolha2')){
-        resposta2.style.display = 'initial'
-    
+    if (alternative.classList.contains('celular')) {
+        resultado.textContent = 'A pedra atravessa diretamente o fantasma... E ele vem atrás de você!'
+        fantasma.style.width = '100%'        
     }
 
-    if (opcao.classList.contains ('escolha3')){
-        resposta3.style.display = 'initial'
-    
+    if (alternative.classList.contains('fantasma')) {
+        resultado.textContent = 'Você vai em direção ao fantasma... E ele some!'
+        fantasma.style.opacity = '0%' 
     }
 
-    if (opcao.classList.contains ('escolha4')){
-        resposta4.style.display = 'initial'
-    
+    if (alternative.classList.contains('porta')) {
+        resultado.textContent = 'Você tenta abrir a porta, mas o fantasma te pega!'
+        fantasma.style.width = '100%' 
     }
+
+    if (alternative.classList.contains('interruptor')) {
+        resultado.textContent = 'Você tenta acender a luz... Que está queimada!'
+        body.style.backgroundColor = 'red'
+        
+    }
+
+    boxmensagem.style.display = 'inherit'
 
 }
 
-let opcoes = document.querySelectorAll('li')
-for (let opcao of opcoes){
-    opcao.addEventListener('click',checkAnswer)
+let alternatives = document.querySelectorAll('.imagem')
+for (let alternative of alternatives) {
+    alternative.addEventListener('click', checkAnswer)
 }

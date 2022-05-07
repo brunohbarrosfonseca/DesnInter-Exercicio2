@@ -1,33 +1,111 @@
-.resposta1{
-    display: none;
-}
-
-.resposta2{
-    display: none;
-}
-
-.resposta3{
-    display: none;
-}
-
-.resposta4{
-    display: none;
-}
-
+/*Body*/
 body{
     background-color: black;
     color: white;
-    font-family: 'Radio Canada', sans-serif
-    
+    font-family: 'Radio Canada', sans-serif;
+    text-align: center;      
 }
 
 h1{
-    text-align: center;
+    font-size: 2em;
 }
 
-img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    object-fit: cover;
+/*Alinhamento das imagens no box */
+.boximagens{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+         
 }
+
+/*Transição das imagens */
+.imagem{
+    transition: all 1s;
+    transform-origin: 50% 50%;    
+}
+/*Hover aumenta imagens */
+.imagem:hover {
+    transform: scale(1.1);
+}
+
+/*Dimensão de cada imagem*/
+.celular{
+    width: 15%;
+    align-self: flex-end;
+    transform-origin: 50% 100%;         
+}
+
+.fantasma{
+    width: 10%;     
+}
+
+.porta{
+    width: 15%;
+    align-self: flex-start;
+}
+
+.interruptor{
+    width: 10%;   
+}
+
+/*Box de mensagem*/
+.boxmensagem{
+    height: 50px;
+    display: block;
+    border: 1px white;
+    border-radius: 5px;
+    border-style: solid;
+    background-color: rgb(220, 220, 220);
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 10px;
+    color: rgb(1, 1, 1)
+    
+}
+
+.resultado{
+    font-size: 1.2em;
+    font-weight: bold;
+    
+}
+
+/* 
+
+svg{
+    float: left;
+    padding: 20px;
+    margin: 20px;    
+}
+
+.imagens{
+        
+}
+
+.imagem1{
+    position: absolute;
+    bottom: auto;
+}
+
+.imagem2{
+    position: absolute;
+    bottom: 5%;
+    padding-left: 40%;
+}
+
+.imagem3{
+    position: absolute;
+    bottom: 10%;
+    padding-left: 60%;
+
+}
+
+.imagem4{
+    position: absolute;
+    right: 0;
+    bottom: 5%;
+}
+
+*/
+
