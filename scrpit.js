@@ -11,8 +11,8 @@ function checkAnswer(event) {
     alternative.classList.add('clicked')
 
     if (alternative.classList.contains('celular')) {
-        resultado.textContent = 'A pedra atravessa diretamente o fantasma... E ele vem atrás de você!'
-        fantasma.style.width = '100%'        
+        resultado.textContent = 'Fantasmas não gostam de selfies. Ele quase desaparece...'
+        fantasma.style.opacity = '10%'      
     }
 
     if (alternative.classList.contains('fantasma')) {
@@ -22,12 +22,15 @@ function checkAnswer(event) {
 
     if (alternative.classList.contains('porta')) {
         resultado.textContent = 'Você tenta abrir a porta, mas o fantasma te pega!'
-        fantasma.style.width = '100%' 
+        fantasma.style.width = '100%'
+        fantasma.style.opacity = '100%' 
+        fantasma.style.alignSelf = 'flex-start'  
     }
 
     if (alternative.classList.contains('interruptor')) {
         resultado.textContent = 'Você tenta acender a luz... Que está queimada!'
-        body.style.backgroundColor = 'red'
+
+        body.style.backgroundColor = '#212121'
         
     }
 
