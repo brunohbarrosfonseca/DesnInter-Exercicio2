@@ -1,6 +1,6 @@
 /*Body*/
 body{
-    background-color: black;
+    background-color: #111111;
     color: white;
     font-family: 'Radio Canada', sans-serif;
     text-align: center;      
@@ -16,7 +16,7 @@ h1{
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    height: 500px;
+    height: 30em;
          
 }
 

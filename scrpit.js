@@ -29,9 +29,7 @@ function checkAnswer(event) {
 
     if (alternative.classList.contains('interruptor')) {
         resultado.textContent = 'Você tenta acender a luz... Que está queimada!'
-
-        body.style.backgroundColor = '#212121'
-        
+        body.style.backgroundColor = '#000000'        
     }
 
     boxmensagem.style.display = 'inherit'
