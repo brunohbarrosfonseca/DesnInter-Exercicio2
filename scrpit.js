@@ -6,9 +6,7 @@ let body = document.querySelector('body')
 
 
 function checkAnswer(event) {
-    quiz.classList.add('inactive')
     let alternative = event.target
-    alternative.classList.add('clicked')
 
     if (alternative.classList.contains('celular')) {
         resultado.textContent = 'Fantasmas não gostam de selfies. Ele quase desaparece...'
@@ -29,14 +27,58 @@ function checkAnswer(event) {
 
     if (alternative.classList.contains('interruptor')) {
         resultado.textContent = 'Você tenta acender a luz... Que está queimada!'
-        body.style.backgroundColor = '#000000'        
+        //troca cor do fundo para amarelo
+        body.style.backgroundColor = 'rgb(209, 197, 22)'
+        //inicia um contador de 1 seg e muda cor para preto
+        setTimeout(()=>{body.style.backgroundColor = 'rgb(1, 1, 1)'
+            setTimeout(function (){body.style.backgroundColor = 'rgb(209, 197, 22)'
+                setTimeout(function (){body.style.backgroundColor = 'rgb(1, 1, 1)'
+                }, 250)
+            }, 150)
+        }, 450)
     }
 
     boxmensagem.style.display = 'inherit'
+    podeInteragir = false
+    setTimeout (()=>{
+        podeInteragir = true
+    },1000)
 
+}
+
+let podeInteragir = true
+
+function mostrarAcao(event){
+    if (podeInteragir){
+
+        let alternative = event.target
+
+        if (alternative.classList.contains('celular')) {
+            resultado.textContent = 'Tentar fotografar o fantasma'
+        }
+
+        if (alternative.classList.contains('fantasma')) {
+            resultado.textContent = 'Tentar lutar com o fantasma'
+        }
+
+        if (alternative.classList.contains('porta')) {
+            resultado.textContent = 'Fugir pela porta'
+        }
+
+        if (alternative.classList.contains('interruptor')) {
+            resultado.textContent = 'Acender a luz'
+        }
+    }
+
+}
+
+function esconderAcao(){
+    resultado.textContent = ''
 }
 
 let alternatives = document.querySelectorAll('.imagem')
 for (let alternative of alternatives) {
     alternative.addEventListener('click', checkAnswer)
+    alternative.addEventListener('mouseout', esconderAcao)
+    alternative.addEventListener('mouseover', mostrarAcao)
 }
